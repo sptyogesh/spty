@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spty</title>
+  <link rel="stylesheet" href="spty.css">
+  <script src="spty.js"></script>
+</head>
+<body>
+    <nav class="menu-container">
+          <input type="checkbox" aria-label="Toggle menu" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <div class="header">
+          <h1>Unified Public Welfare:<br>Explore Government Pension and Savings Schemes in One Portal</h1>
+
+          <div class="sameline">
+            <div class="input__container">
+              <div class="shadow__input"></div>
+            <button class="input__button__shadow" onclick="toggleSearchBar()">
+              <svg fill="none" viewBox="0 0 20 20" height="20px" width="20px">
+                <path d="M4 9a5 5 0 1110 0A5 5 0 014 9zm5-7a7 7 0 104.2 12.6.999.999 0 00.093.107l3 3a1 1 0 001.414-1.414l-3-3a.999.999 0 00-.107-.093A7 7 0 009 2z" fill-rule="evenodd" fill="#17202A"></path>
+              </svg>
+            </button>
+            <input type="text" name="text" class="input__search" placeholder="What do you want to search?">
+          </div>
+          <div class="menu">
+            <ul></ul>
+            <ul>
+              <li><a href="spty.html">&#127968;</a></li>
+              <li><a href="contact.html">&#128222;</a></li>
+              <li><a href="about.html">&#128218;</a></li>
+            </ul>
+          </div>
+      </nav>
+      <div class="subscribe"  id="searchBarContainer"  style="display: none;">
+            <h2>Search for Schemes</h2>
+            <form id="searchForm"  onsubmit="searchscheme(); return false;">
+               <label for="genderInput">Enter Gender:</label>
+                    <select id="genderInput" required>
+                      <option value="">Choose Gender</option> 
+                      <option value="Male">Male</option> 
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+                    </select>    
+                <label for="ageInput">Enter Age:</label>
+                    <input type="number" id="ageInput" min="0" placeholder="Age" class="subscribe-input"  name="age" required>
+                <label for="nameInput" >Enter Scheme/Bank Name:</label>
+                    <input type="text" id="nameInput" placeholder="Search..." class="subscribe-input" name="name" required>
+            </form>
+            <div class="submit-btn" onclick="searchscheme()">SUBMIT</div>
+      </div>
+      <section id="resultsSection" style="display: none;">
+             <h2>Search Results</h2>
+             <ul id="schemeList"></ul>
+      </section>
+      <div class="scroll-container">
+          <div class="scroll-item">
+             <img src="Poster (1).jpeg" alt="Image 1">
+          </div>
+          <div class="scroll-item">
+             <img src="Poster (2).jpg" alt="Image 2">
+          </div>
+          <div class="scroll-item">
+             <img src="Poster (3).jpeg" alt="Image 3">
+          </div>
+          <div class="scroll-item">
+            <img src="Poster (4).jpg" alt="Image 4">
+          </div>
+          <div class="scroll-item">
+            <img src="Poster (5).jpg" alt="Image 4">
+          </div>
+          <div class="scroll-item">
+            <img src="Poster (6).jpg" alt="Image 4">
+          </div>
+          <button class="arrow left" onclick="scrollToLeft()">&#10094;</button>
+          <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+      </div>
+      <br><br><br><br>
+      <h1 class="sun">Find Banks based<br>on Schemes</h2>
+      <div class="container">
+          <button class="button-57" role="button">
+             <span class="text"><img src="Bank of Baroda.png" alt="sbi Icon" class="clickable-icon"></span>
+             <span><a href="icon.html?type=bob" class="clickable-icon"  alt="sbi Icon">
+             <p>Bank of Baroda</p></a>
+             </span>
+          </button>
+          <button class="button-57" role="button">
+             <span class="text"><img src="Canara Bank of India.png" class="clickable-icon" alt="Post Icon"></span>
+             <span><a href="icon.html?type=canara" class="clickable-icon" alt="Post Icon">
+              <p>Canara Bank of India</p>
+             </a></span>
+          </button>   
+          <button class="button-57" role="button">
+             <span class="text"><img src="Central Bank of India.png"  class="clickable-icon" alt="Post Icon"></span>
+             <span><a href="icon.html?type=cbi" class="clickable-icon" alt="Post Icon">
+              <p id="jam">Central Bank of India</p>
+             </a></span>
+          </button>
+          <button class="button-57" role="button">
+             <span class="text"><img src="India Post Payments Bank.png" class="clickable-icon" alt="Post Icon"></span>
+             <span><a href="icon.html?type=post" class="clickable-icon" alt="Post Icon">
+              <p>India Post Payments Bank</p>
+             </a></span>
+          </button>
+      </div>
+      <br><br>
+      <div class="container">
+          <button class="button-57" role="button">
+             <span class="text"><img src="Indian Bank.png" alt="sbi Icon" class="clickable-icon"></span>
+             <span><a href="icon.html?type=indian" class="clickable-icon" alt="sbi Icon">
+              <p>Indian Bank</p>
+             </a></span>
+          </button>
+          <button class="button-57" role="button">
+             <span class="text"><img src="indian overseas bank.png" alt="Post Icon" class="clickable-icon"></span>
+             <span><a href="icon.html?type=iob" class="clickable-icon" alt="Post Icon">
+              <p>Indian Overseas Bank</p>
+             </a></span>
+          </button>
+          <button class="button-57" role="button">
+             <span class="text"><img src="Punjab National Bank.png" alt="indian Icon" class="clickable-icon"></span>
+             <span><a href="icon.html?type=pnb" class="clickable-icon" alt="indian Icon">
+              <p>Punjab National Bank</p>
+             </a></span>
+          </button>
+      </div>
+      <br><br>
+      <div class="container">
+          <button class="button-57" role="button">
+             <span class="text"><img src="State Bank of India.png" class="clickable-icon" alt="Post Icon"></span>
+             <span><a href="icon.html?type=sbi" class="clickable-icon" alt="Post Icon">
+              <p>State Bank Of India</p>
+             </a></span>
+          </button>
+          <button class="button-57" role="button">
+             <span class="text"><img src="Union Bank of India.png" class="clickable-icon" alt="sbi Icon"></span>
+             <span><a href="icon.html?type=ubi" class="clickable-icon" alt="sbi Icon">
+              <p>Union Bank of India</p>
+             </a></span>
+          </button>
+      </div>
+      <br><br>
+      <h1 class="sun" style="font-size: 130%; color: rgb(212, 208, 208);">How it works</h2>
+      <h1 class="sun">Easy steps to apply<br>for Government Schemes</h2>
+      <div class="icon-container">
+         <div class="icon-container1">
+             <img src="check.svg" alt="Icon 1" class="icon">
+             <span class="icon-text" style="color: rgb(128, 255, 0);">Enter Details</span>
+             <span class="icon-text">Start by entering your basic details!</span>
+         </div>
+         <div class="icon-container1">
+              <img src="search.svg" alt="Icon 2" class="icon">
+              <span class="icon-text" style="color: lawngreen;">Search</span>
+              <span class="icon-text">Our search engine will find the relevant schemes!</span>
+         </div>
+         <div class="icon-container1">
+              <img src="apply.svg" alt="Icon 3" class="icon">
+              <span class="icon-text" style="color: lawngreen;">Select & Apply</span>
+              <span class="icon-text">Select and apply for the best suited scheme</span>
+         </div>
+      </div>
+</body>  
+</html>
